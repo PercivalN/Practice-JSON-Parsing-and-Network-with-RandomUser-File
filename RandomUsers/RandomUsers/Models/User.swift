@@ -17,11 +17,17 @@ struct User: Decodable {
 	var name: Name
 	var email: String
 	var phone: String
+	let picture: Picture
 }
 
 struct Name: Decodable {
 	let first: String
 	let last: String
 	// Nested data is value that is nested inside another value
-	
+}
+
+struct Picture: Decodable {
+	var thumbnail: URL
+	var medium: URL
+	var large: URL
 }

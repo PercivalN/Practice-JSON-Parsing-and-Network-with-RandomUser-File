@@ -35,6 +35,8 @@ class UsersTableViewController: UITableViewController {
 
 		let user = apiController.users[indexPath.row] // indexpath is the address and the row is the place in the tableview
 		cell.textLabel?.text = user.name.first.capitalized + " " + user.name.last.capitalized
+		guard let imageData = try? Data(contentsOf: user.picture.thumbnail) else { fatalError() } // We are unwrapping with fatalError because return will not work in this situation because I think it would stop, instead fatalError will us a error message.
+		cell.imageView?.image = UIImage(data: imageData) // Every basic cell comes with a picture frame that can have a picture assigned to it.
         return cell
 		// We will pass the info from the tableview to the detail view
     }
