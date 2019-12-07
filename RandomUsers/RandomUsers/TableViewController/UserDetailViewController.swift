@@ -10,6 +10,9 @@ import UIKit
 
 class UserDetailViewController: UIViewController {
 
+	@IBOutlet weak var emailLabel: UILabel!
+	@IBOutlet weak var phoneLabel: UILabel!
+
 	var user: User? { // didSet will confirm that the value was passed to the detailVC
 		didSet {
 			updateViews()
@@ -24,7 +27,10 @@ class UserDetailViewController: UIViewController {
 	func updateViews() {
 		guard isViewLoaded,
 			let user = user else { return }
-		title = user.name.first.capitalized
+		title = user.name.first.capitalized + " " + user.name.last.capitalized
+		emailLabel.text = user.email
+		phoneLabel.text = user.phone
+		
 	}
 
 	/*

@@ -34,7 +34,7 @@ class UsersTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath)
 
 		let user = apiController.users[indexPath.row] // indexpath is the address and the row is the place in the tableview
-		cell.textLabel?.text = user.name.first.capitalized
+		cell.textLabel?.text = user.name.first.capitalized + " " + user.name.last.capitalized
         return cell
 		// We will pass the info from the tableview to the detail view
     }
