@@ -12,7 +12,7 @@ class APIController {
 
 	var users: [User] = []
 
-	let baseURL = URL(string: "https://randomuser.me/api/?format=json@results=20")!
+	let baseURL = URL(string: "https://randomuser.me/api/?format=json&results=20")!
 	typealias CompletionHandler = (Error?) -> Void
 
 	// In checking to see if there is an error and if there is data before we do the do-try-catch to retrieve the data.

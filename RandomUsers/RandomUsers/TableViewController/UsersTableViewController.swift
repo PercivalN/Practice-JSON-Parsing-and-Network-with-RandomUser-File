@@ -10,37 +10,35 @@ import UIKit
 
 class UsersTableViewController: UITableViewController {
 
+	let apiController = APIController()// Whenever we need to call a function that is in another class, we can just create an instance of the class.
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+		apiController.getUsers { (error) in
+			if let error = error {
+				NSLog("Error performing data task: \(error)")
+			}
+			DispatchQueue.main.async { // This just puts the data on the main queue
+				self.tableView.reloadData()
+			}
+		}
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+		return apiController.users.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath)
 
-        // Configure the cell...
-
+		let user = apiController.users[indexPath.row] // indexpath is the address and the row is the place in the tableview
+		cell.textLabel?.text = user.name.first.capitalized
         return cell
+		// We will pass the info from the tableview to the detail view
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -77,14 +75,11 @@ class UsersTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
     }
-    */
 
 }

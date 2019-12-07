@@ -14,7 +14,11 @@ struct UserResult: Decodable {
 }
 
 struct User: Decodable {
-	let name: String
-	let email: String
+	var name: Name
+}
 
+struct Name: Decodable {
+	let first: String
+	// Nested data is value that is nested inside another value
+	
 }
