@@ -14,6 +14,7 @@
 		DD9694D8239B193100D5C9F4 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9694D7239B193100D5C9F4 /* UsersTableViewController.swift */; };
 		DD9694DB239B199500D5C9F4 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9694DA239B199500D5C9F4 /* UserDetailViewController.swift */; };
 		DD9694DD239B2C3C00D5C9F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9694DC239B2C3C00D5C9F4 /* User.swift */; };
+		DD9694E0239B2F2800D5C9F4 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9694DF239B2F2800D5C9F4 /* APIController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DD9694D7239B193100D5C9F4 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		DD9694DA239B199500D5C9F4 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		DD9694DC239B2C3C00D5C9F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DD9694DF239B2F2800D5C9F4 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				DD9694D9239B193500D5C9F4 /* TableViewController */,
 				3D97CBFF2321D2D900739215 /* Resources */,
 				DD9694DE239B2C4000D5C9F4 /* Models */,
+				DD9694E1239B2F5800D5C9F4 /* Model Controller */,
 			);
 			path = RandomUsers;
 			sourceTree = "<group>";
@@ -100,6 +103,14 @@
 				DD9694DC239B2C3C00D5C9F4 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DD9694E1239B2F5800D5C9F4 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DD9694DF239B2F2800D5C9F4 /* APIController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +188,7 @@
 				DD9694D8239B193100D5C9F4 /* UsersTableViewController.swift in Sources */,
 				3D97CBEE2321D2BD00739215 /* AppDelegate.swift in Sources */,
 				DD9694DB239B199500D5C9F4 /* UserDetailViewController.swift in Sources */,
+				DD9694E0239B2F2800D5C9F4 /* APIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
